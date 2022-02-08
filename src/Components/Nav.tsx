@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Paper, Avatar } from "@mui/material";
 import { NavContainer, Menu, NavUnlisted, AvatarContainer } from "./Nav.style";
 import { NavLink } from "react-router-dom";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 interface Props {}
 
@@ -24,10 +25,9 @@ const Nav: FC<Props> = () => {
                         ))}
                     </NavUnlisted>
                     <AvatarContainer>
-                        <Avatar
-                            alt="Slawek Marciniak"
-                            src="/static/images/avatar/1.jpg"
-                        />
+                        <Avatar alt="Slawek Marciniak" src="/avatar.jpg" />
+                        <span>slawek marciniak</span>
+                        <KeyboardArrowDownIcon style={{ fontSize: 16 }} />
                     </AvatarContainer>
                 </Menu>
             </NavContainer>

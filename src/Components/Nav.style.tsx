@@ -9,39 +9,39 @@ export const Menu = styled.div`
     display: flex;
     margin: auto;
     width: 1000px;
-    height: 50px;
+    height: 60px;
     background-color: #f5f6fa;
-    border: 1px solid black;
 `;
 
 export const NavUnlisted = styled.ul`
     display: flex;
-    flex-grow: 1;
+    flex-basis: 40%;
     align-items: center;
     justify-content: space-around;
     a {
         text-decoration: none;
     }
     li {
-        color: red;
-        margin: 0 0.8rem;
-        font-size: 1.3rem;
+        color: gray;
+        font-size: 14px;
+        font-weight: bold;
         position: relative;
         list-style: none;
-        width: 100px;
+        width: 110px;
         text-align: center;
+        text-transform: uppercase;
     }
 
     .active {
         li {
-            /* border-bottom: 2px solid black; */
+            color: orange;
             &:after {
                 content: "";
-                border-bottom: solid 2px red;
+                border-bottom: solid 2px orange;
                 position: absolute;
                 bottom: -7px;
-                left: 30px;
-                right: 30px;
+                left: 37px;
+                right: 37px;
             }
         }
     }
@@ -52,4 +52,10 @@ export const AvatarContainer = styled.div`
     flex-grow: 1;
     align-items: center;
     justify-content: flex-end;
+    color: gray;
+    span {
+        text-transform: capitalize;
+        font-size: 14px;
+        margin: 0 4px 0 8px;
+    }
 `;

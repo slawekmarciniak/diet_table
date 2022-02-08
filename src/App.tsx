@@ -16,8 +16,6 @@ const App: FC = () => {
                 <Route path="recipes" element={<Recipes />} />
                 <Route path="challenge" element={<Challenge />} />
             </Routes>
-            <div>x</div>
-            <div>x</div>
         </>
     );
 };

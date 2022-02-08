@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: #dcdde1;
         margin: 0px;
         padding: 0px;
+        font-family: roboto;
 
     }
 
