@@ -6,5 +6,32 @@ export const TableContainer = styled.div`
     width: 100%;
     height: 800px;
     background-color: #f5f6fa;
-    border: 1px solid black;
+`;
+
+export const IntervalsContainer = styled.div`
+    display: flex;
+    flex-basis: 13%;
+    flex-direction: column;
+    height: 100%;
+`;
+
+export const DaysContainer = styled.div`
+    display: flex;
+    flex-basis: 87%;
+`;
+
+export const Day = styled.div`
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    border-right: 1px solid gray;
+    align-items: center;
+    /* justify-content: center; */
+    & .dayNumber {
+        color: orange;
+        height: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 `;
