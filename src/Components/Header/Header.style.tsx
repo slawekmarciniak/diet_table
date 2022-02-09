@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavContainer = styled.div`
+export const HeaderContainer = styled.div`
     width: 100vw;
     background-color: #f5f6fa;
 `;
@@ -13,7 +13,7 @@ export const Menu = styled.div`
     background-color: #f5f6fa;
 `;
 
-export const NavUnlisted = styled.ul`
+export const Nav = styled.ul`
     display: flex;
     flex-basis: 40%;
     align-items: center;

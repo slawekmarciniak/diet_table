@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Paper, Avatar } from "@mui/material";
-import { NavContainer, Menu, NavUnlisted, AvatarContainer } from "./Nav.style";
+import { HeaderContainer, Menu, Nav, AvatarContainer } from "./Header.style";
 import { NavLink } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
@@ -12,27 +12,27 @@ const links = [
     { name: "challenge", path: "/challenge" },
 ];
 
-const Nav: FC<Props> = () => {
+const Header: FC<Props> = () => {
     return (
         <Paper elevation={1}>
-            <NavContainer>
+            <HeaderContainer>
                 <Menu>
-                    <NavUnlisted>
+                    <Nav>
                         {links.map((link, index) => (
                             <NavLink key={index} to={link.path}>
                                 <li>{link.name}</li>
                             </NavLink>
                         ))}
-                    </NavUnlisted>
+                    </Nav>
                     <AvatarContainer>
                         <Avatar alt="Slawek Marciniak" src="/avatar.jpg" />
                         <span>slawek marciniak</span>
                         <KeyboardArrowDownIcon style={{ fontSize: 16 }} />
                     </AvatarContainer>
                 </Menu>
-            </NavContainer>
+            </HeaderContainer>
         </Paper>
     );
 };
 
-export default Nav;
+export default Header;
