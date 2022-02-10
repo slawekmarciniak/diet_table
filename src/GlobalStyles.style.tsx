@@ -6,7 +6,11 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0px;
         padding: 0px;
         font-family: roboto;
+        box-sizing: border-box;
 
+    }
+    * {
+        box-sizing: border-box;
     }
 
 `;
