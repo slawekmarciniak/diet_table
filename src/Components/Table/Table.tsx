@@ -12,6 +12,7 @@ import {
     week,
     showedWeek,
 } from "../../fakeDB/fakeDB";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import moment from "moment";
 interface Props {}
 
@@ -64,10 +65,22 @@ const RenderDay = ({ day, carbs }: RenderDayProps) => {
             <Day>
                 <div className="dayNumber">day {dayNumber}</div>
                 {diet.map((e: any, i: any) => (
-                    <div key={i}>{e}</div>
+                    <div className="dayElement" key={i}>
+                        <p>{e}</p>
+                    </div>
                 ))}
-                <div>low-carb</div>
-                <div>icon</div>
+                <div className="dayCarbs">
+                    <p>low-carb</p>
+                </div>
+                <div className="workoutIcon">
+                    <FitnessCenterIcon
+                        style={{
+                            color: "gray",
+                            transform: "rotate(-45deg)",
+                            fontSize: 30,
+                        }}
+                    />
+                </div>
             </Day>
         </>
     );
