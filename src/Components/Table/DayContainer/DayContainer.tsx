@@ -1,9 +1,9 @@
 import { FC } from "react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import TagFacesIcon from "@mui/icons-material/TagFaces";
 import moment from "moment";
 import { Day } from "./DayContainer.style";
 import {
-    userTimeInterval,
     lowCarbsDiet,
     heightCarbsDiet,
     week,
@@ -24,71 +24,87 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     const isToday = day === dayOfWeek && showedWeek === dietWeek;
     const isSunday = day === 7;
 
-    return (
-        <>
-            {!isSunday && (
-                <Day
-                    borderRight="1px solid gray"
-                    className={isToday ? "today" : ""}
+    const renderSunday = () => (
+        <Day borderRight="1px solid gray" className={isToday ? "today" : ""}>
+            <div
+                className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
+            >
+                day {dayNumber}
+            </div>
+            {diet.map((e: any, i: any) => (
+                <div
+                    className={
+                        isToday ? "dayElement dayElementActive" : "dayElement"
+                    }
+                    key={i}
                 >
-                    <div className="dayNumber">day {dayNumber}</div>
-                    {diet.map((e: any, i: any) => (
-                        <div className="dayElement" key={i}>
-                            <p>{e}</p>
-                            {e === "Bod-e Shake" && (
-                                <img
-                                    style={{
-                                        opacity: 0.9,
-                                        filter: isToday
-                                            ? "grayscale(0%)"
-                                            : "grayscale(60%)",
-                                    }}
-                                    src="bode_shake.png"
-                                    alt="shake"
-                                    width="130"
-                                ></img>
-                            )}
-                        </div>
-                    ))}
-                    <div className="dayCarbs">
-                        {carbs === "low" ? <p>low-carb</p> : <p>high-carb</p>}
-                    </div>
-                    <div className="workoutIcon">
-                        <FitnessCenterIcon
+                    <p>{e}</p>
+                    {e === "Bod-e Shake" && (
+                        <img
                             style={{
-                                color: "gray",
-                                transform: "rotate(-45deg)",
-                                fontSize: 30,
+                                opacity: 0.9,
+                                filter: isToday
+                                    ? "grayscale(0%)"
+                                    : "grayscale(60%)",
                             }}
-                        />
-                    </div>
-                </Day>
-            )}
-
-            {isSunday && (
-                <Day borderRight="none" className={isToday ? "today" : ""}>
-                    <div className="dayNumber">day {dayNumber}</div>
-                    {diet.map((e: any, i: any) => (
-                        <div className="dayElement" key={i}>
-                            <p>{e}</p>
-                        </div>
-                    ))}
-                    <div className="dayCarbs">
-                        <p>low-carb</p>
-                    </div>
-                    <div className="workoutIcon">
-                        <FitnessCenterIcon
-                            style={{
-                                color: "gray",
-                                transform: "rotate(-45deg)",
-                                fontSize: 30,
-                            }}
-                        />
-                    </div>
-                </Day>
-            )}
-        </>
+                            src="bode_shake.png"
+                            alt="shake"
+                            width="130"
+                        ></img>
+                    )}
+                </div>
+            ))}
+            <div className="dayCarbs">
+                {carbs === "low" ? <p>low-carb</p> : <p>high-carb</p>}
+            </div>
+            <div className="workoutIcon">
+                <FitnessCenterIcon
+                    style={{
+                        color: "gray",
+                        transform: "rotate(-45deg)",
+                        fontSize: 30,
+                    }}
+                />
+            </div>
+        </Day>
     );
+
+    const renderWeekday = () => (
+        <Day borderRight="none" className={isToday ? "today" : ""}>
+            <div
+                className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
+            >
+                day {dayNumber}
+            </div>
+            <div
+                className={
+                    isToday
+                        ? "dayElement  sunday sundayActive"
+                        : "dayElement  sunday"
+                }
+            >
+                <span>guilt-free day</span>
+                <span>
+                    <TagFacesIcon style={{ fontSize: 40 }} />
+                </span>
+            </div>
+
+            <div className="dayCarbs">
+                <p>low-carb</p>
+            </div>
+            <div className="workoutIcon">
+                <FitnessCenterIcon
+                    style={{
+                        color: "gray",
+                        transform: "rotate(-45deg)",
+                        fontSize: 30,
+                    }}
+                />
+            </div>
+        </Day>
+    );
+
+    return <>{isSunday ? renderWeekday() : renderSunday()}</>;
 };
 
 export default DayContainer;

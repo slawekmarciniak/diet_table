@@ -10,12 +10,12 @@ export const showedWeek = 7;
 export const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 export const week = [
     { id: 1, day: 1, carbs: "low" },
-    { id: 1, day: 2, carbs: "low" },
-    { id: 1, day: 3, carbs: "height" },
-    { id: 1, day: 4, carbs: "low" },
-    { id: 1, day: 5, carbs: "low" },
-    { id: 1, day: 6, carbs: "height" },
-    { id: 1, day: 7, carbs: null },
+    { id: 2, day: 2, carbs: "low" },
+    { id: 3, day: 3, carbs: "height" },
+    { id: 4, day: 4, carbs: "low" },
+    { id: 5, day: 5, carbs: "low" },
+    { id: 6, day: 6, carbs: "height" },
+    { id: 7, day: 7, carbs: null },
 ];
 
 export const lowCarbsDiet = [

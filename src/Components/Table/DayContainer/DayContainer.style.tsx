@@ -26,6 +26,9 @@ export const Day = styled.div<Props>`
         text-transform: uppercase;
         border-bottom: 1px solid gray;
     }
+    & .dayNumberActive {
+        color: orange;
+    }
     & .dayElement {
         border-bottom: 1px solid gray;
         width: 100%;
@@ -35,6 +38,34 @@ export const Day = styled.div<Props>`
             font-size: 14px;
             color: gray;
             margin: 5px;
+        }
+    }
+    & .sunday {
+        width: 130px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        color: #b1b1b1;
+        span:nth-child(1) {
+            transform: rotate(-90deg) translate(40%, 0);
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            width: 300px;
+        }
+        span:nth-child(2) {
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+    }
+    & .sundayActive {
+        color: black;
+    }
+    & .dayElementActive {
+        p {
+            color: black;
         }
     }
     & .dayCarbs {
