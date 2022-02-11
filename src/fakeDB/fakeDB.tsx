@@ -1,3 +1,6 @@
+export const userCurrentWeek = 7;
+export const userWeeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
 export const userTimeInterval = [
     { time: "6:00", label: "AM" },
     { time: "9:00", label: "AM" },
@@ -6,8 +9,6 @@ export const userTimeInterval = [
     { time: "6:00", label: "PM" },
 ];
 
-export const showedWeek = 7;
-export const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 export const week = [
     { id: 1, day: 1, carbs: "low" },
     { id: 2, day: 2, carbs: "low" },

@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { SectionContainer, SectionElement } from "./TableHeader.style";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { showedWeek } from "../../fakeDB/fakeDB";
 import { AppContext } from "../../AppContext/AppContext";
 import { AppContextType } from "../../AppContext/AppContext";
 

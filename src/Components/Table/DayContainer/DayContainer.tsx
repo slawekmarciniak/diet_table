@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useContext } from "react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
 import PrintIcon from "@mui/icons-material/Print";
@@ -7,22 +8,22 @@ import { Day } from "./DayContainer.style";
 import {
     lowCarbsDiet,
     heightCarbsDiet,
-    week,
-    showedWeek,
+    userCurrentWeek,
 } from "../../../fakeDB/fakeDB";
+import { AppContext } from "../../../AppContext/AppContext";
+import { AppContextType } from "../../../AppContext/AppContext";
 
 interface DayContainerProps {
     day: number;
     carbs: string | null;
 }
-
 const dayOfWeek = moment().day();
-const dietWeek = 7;
 
 const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
+    const { activeWeek } = useContext<AppContextType>(AppContext);
     const diet = carbs === "low" ? lowCarbsDiet : heightCarbsDiet;
-    const dayNumber = showedWeek * 7 + day;
-    const isToday = day === dayOfWeek && showedWeek === dietWeek;
+    const dayNumber = activeWeek * 7 - 7 + day;
+    const isToday = day === dayOfWeek && activeWeek === userCurrentWeek;
     const isSunday = day === 7;
 
     const renderWeekday = () => (

@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { showedWeek } from "../fakeDB/fakeDB";
+import { userCurrentWeek, userWeeks } from "../fakeDB/fakeDB";
 
 export type AppContextType = {
     activeWeek: number;
@@ -14,14 +14,14 @@ type Props = {
 };
 
 const AppProvider = ({ children }: Props) => {
-    const [activeWeek, setActiveWeek] = useState(showedWeek);
+    const [activeWeek, setActiveWeek] = useState(userCurrentWeek);
 
     const handleNextWeek = (): void => {
-        setActiveWeek(activeWeek + 1);
+        activeWeek < userWeeks.length && setActiveWeek(activeWeek + 1);
     };
 
     const handlePreviousWeek = (): void => {
-        setActiveWeek(activeWeek - 1);
+        activeWeek > 1 && setActiveWeek(activeWeek - 1);
     };
 
     return (
