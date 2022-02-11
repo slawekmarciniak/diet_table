@@ -18,7 +18,7 @@ const Table: FC<Props> = () => {
             </IntervalsContainer>
             <DaysContainer>
                 {week.map((e) => (
-                    <DayContainer day={e.day} carbs={e.carbs} />
+                    <DayContainer key={e.id} day={e.day} carbs={e.carbs} />
                 ))}
             </DaysContainer>
         </TableContainer>

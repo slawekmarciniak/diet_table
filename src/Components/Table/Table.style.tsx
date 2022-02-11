@@ -20,4 +20,17 @@ export const DaysContainer = styled.div`
     display: flex;
     flex-basis: 91%;
     background: #f5f6fa;
+
+    .today {
+        &:after {
+            content: "";
+            border: solid 3px orange;
+            position: absolute;
+            bottom: -1px;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            z-index: 2;
+        }
+    }
 `;

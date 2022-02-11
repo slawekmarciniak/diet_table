@@ -9,13 +9,13 @@ export const userTimeInterval = [
 export const showedWeek = 7;
 export const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 export const week = [
-    { day: 1, carbs: "low" },
-    { day: 2, carbs: "low" },
-    { day: 3, carbs: "height" },
-    { day: 4, carbs: "low" },
-    { day: 5, carbs: "low" },
-    { day: 6, carbs: "height" },
-    { day: 7, carbs: null },
+    { id: 1, day: 1, carbs: "low" },
+    { id: 1, day: 2, carbs: "low" },
+    { id: 1, day: 3, carbs: "height" },
+    { id: 1, day: 4, carbs: "low" },
+    { id: 1, day: 5, carbs: "low" },
+    { id: 1, day: 6, carbs: "height" },
+    { id: 1, day: 7, carbs: null },
 ];
 
 export const lowCarbsDiet = [

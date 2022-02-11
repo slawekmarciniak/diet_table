@@ -8,9 +8,10 @@ export const Day = styled.div<Props>`
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    border-right: ${(props: any) => props.borderRight};
+    border-right: ${(props) => props.borderRight};
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 
     & .dayNumber {
         display: flex;
@@ -29,7 +30,7 @@ export const Day = styled.div<Props>`
         border-bottom: 1px solid gray;
         width: 100%;
         height: 90px;
-
+        overflow: hidden;
         p {
             font-size: 14px;
             color: gray;

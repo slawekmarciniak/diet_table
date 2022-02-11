@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Interval, Workout } from "./IntervalsColumn.style";
 import { userTimeInterval } from "../../../fakeDB/fakeDB";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 interface IntervalsColumnProps {}
 
@@ -13,12 +14,16 @@ const IntervalsColumn: FC<IntervalsColumnProps> = () => {
                         height={i === 0 || i === 4 ? "120px" : "90px"}
                         key={i}
                     >
-                        <span>{e.time}</span>
-                        <span>{e.label}</span>
+                        <div>
+                            <span>{e.time}</span>
+                            <span>{e.label}</span>
+                        </div>
                     </Interval>
                 );
             })}
-            <Workout>workout</Workout>
+            <Workout>
+                workout <ArrowRightIcon style={{ fontSize: 12 }} />
+            </Workout>
         </>
     );
 };

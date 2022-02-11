@@ -19,7 +19,7 @@ const dayOfWeek = moment().day();
 const dietWeek = 7;
 
 const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
-    const diet = lowCarbsDiet;
+    const diet = carbs === "low" ? lowCarbsDiet : heightCarbsDiet;
     const dayNumber = showedWeek * 7 + day;
     const isToday = day === dayOfWeek && showedWeek === dietWeek;
     const isSunday = day === 7;
@@ -27,15 +27,31 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     return (
         <>
             {!isSunday && (
-                <Day borderRight="1px solid gray">
+                <Day
+                    borderRight="1px solid gray"
+                    className={isToday ? "today" : ""}
+                >
                     <div className="dayNumber">day {dayNumber}</div>
                     {diet.map((e: any, i: any) => (
                         <div className="dayElement" key={i}>
                             <p>{e}</p>
+                            {e === "Bod-e Shake" && (
+                                <img
+                                    style={{
+                                        opacity: 0.9,
+                                        filter: isToday
+                                            ? "grayscale(0%)"
+                                            : "grayscale(60%)",
+                                    }}
+                                    src="bode_shake.png"
+                                    alt="shake"
+                                    width="130"
+                                ></img>
+                            )}
                         </div>
                     ))}
                     <div className="dayCarbs">
-                        <p>low-carb</p>
+                        {carbs === "low" ? <p>low-carb</p> : <p>high-carb</p>}
                     </div>
                     <div className="workoutIcon">
                         <FitnessCenterIcon
@@ -50,7 +66,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
             )}
 
             {isSunday && (
-                <Day borderRight="none">
+                <Day borderRight="none" className={isToday ? "today" : ""}>
                     <div className="dayNumber">day {dayNumber}</div>
                     {diet.map((e: any, i: any) => (
                         <div className="dayElement" key={i}>
