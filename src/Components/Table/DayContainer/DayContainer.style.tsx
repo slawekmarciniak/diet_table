@@ -92,4 +92,17 @@ export const Day = styled.div<Props>`
         text-align: center;
         background-color: #bdc3c7;
     }
+    & .printIcon {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #bdc3c7;
+        color: gray;
+        span {
+            margin: 5px;
+        }
+    }
 `;

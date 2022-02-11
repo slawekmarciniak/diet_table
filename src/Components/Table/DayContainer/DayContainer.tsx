@@ -1,6 +1,7 @@
 import { FC } from "react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
+import PrintIcon from "@mui/icons-material/Print";
 import moment from "moment";
 import { Day } from "./DayContainer.style";
 import {
@@ -24,7 +25,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     const isToday = day === dayOfWeek && showedWeek === dietWeek;
     const isSunday = day === 7;
 
-    const renderSunday = () => (
+    const renderWeekday = () => (
         <Day borderRight="1px solid gray" className={isToday ? "today" : ""}>
             <div
                 className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
@@ -69,7 +70,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
         </Day>
     );
 
-    const renderWeekday = () => (
+    const renderSunday = () => (
         <Day borderRight="none" className={isToday ? "today" : ""}>
             <div
                 className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
@@ -88,23 +89,16 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
                     <TagFacesIcon style={{ fontSize: 40 }} />
                 </span>
             </div>
-
-            <div className="dayCarbs">
-                <p>low-carb</p>
-            </div>
-            <div className="workoutIcon">
-                <FitnessCenterIcon
-                    style={{
-                        color: "gray",
-                        transform: "rotate(-45deg)",
-                        fontSize: 30,
-                    }}
-                />
+            <div className="printIcon">
+                <span>
+                    <PrintIcon style={{ fontSize: 35 }} />
+                </span>
+                <span>print</span>
             </div>
         </Day>
     );
 
-    return <>{isSunday ? renderWeekday() : renderSunday()}</>;
+    return <>{isSunday ? renderSunday() : renderWeekday()}</>;
 };
 
 export default DayContainer;
