@@ -18,7 +18,6 @@ const AppProvider = ({ children }: Props) => {
     const [activeWeek, setActiveWeek] = useState(userCurrentWeek);
     const [isMobile, setIsMobile] = useState(false);
 
-    //choose the screen size
     const handleResize = () => {
         if (window.innerWidth < 720) {
             setIsMobile(true);
@@ -27,7 +26,6 @@ const AppProvider = ({ children }: Props) => {
         }
     };
 
-    // create an event listener
     useEffect(() => {
         window.addEventListener("resize", handleResize);
     });
