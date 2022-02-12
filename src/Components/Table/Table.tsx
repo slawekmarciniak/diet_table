@@ -4,7 +4,7 @@ import {
     DaysContainer,
     IntervalsContainer,
 } from "./Table.style";
-import { week } from "../../fakeDB/fakeDB";
+import { weeklyDietPlan } from "../../fakeDB/fakeDB";
 import DayContainer from "./DayContainer/DayContainer";
 import IntervalsColumn from "./DayContainer/IntervalsColumn";
 
@@ -17,7 +17,7 @@ const Table: FC<Props> = () => {
                 <IntervalsColumn />
             </IntervalsContainer>
             <DaysContainer>
-                {week.map((e) => (
+                {weeklyDietPlan.map((e) => (
                     <DayContainer key={e.id} day={e.day} carbs={e.carbs} />
                 ))}
             </DaysContainer>

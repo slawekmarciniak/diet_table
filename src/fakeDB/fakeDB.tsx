@@ -9,7 +9,7 @@ export const userTimeInterval = [
     { time: "6:00", label: "PM" },
 ];
 
-export const week = [
+export const weeklyDietPlan = [
     { id: 1, day: 1, carbs: "low" },
     { id: 2, day: 2, carbs: "low" },
     { id: 3, day: 3, carbs: "height" },

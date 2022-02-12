@@ -5,6 +5,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { AppContext } from "../../AppContext/AppContext";
 import { AppContextType } from "../../AppContext/AppContext";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 interface Props {}
 
@@ -14,7 +15,9 @@ const TableHeader: FC<Props> = () => {
 
     return (
         <SectionContainer>
-            <SectionElement>x</SectionElement>
+            <SectionElement>
+                <ProgressBar />
+            </SectionElement>
             <SectionElement>
                 <button onClick={() => handlePreviousWeek()}>
                     <ArrowBackIosIcon style={{ marginLeft: 8, fontSize: 20 }} />
