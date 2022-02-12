@@ -10,14 +10,16 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 interface Props {}
 
 const TableHeader: FC<Props> = () => {
-    const { activeWeek, handleNextWeek, handlePreviousWeek } =
+    const { activeWeek, handleNextWeek, handlePreviousWeek, isMobile } =
         useContext<AppContextType>(AppContext);
 
     return (
         <SectionContainer>
-            <SectionElement>
-                <ProgressBar />
-            </SectionElement>
+            {!isMobile && (
+                <SectionElement>
+                    <ProgressBar />
+                </SectionElement>
+            )}
             <SectionElement>
                 <button onClick={() => handlePreviousWeek()}>
                     <ArrowBackIosIcon style={{ marginLeft: 8, fontSize: 20 }} />
