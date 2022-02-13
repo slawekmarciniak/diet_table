@@ -1,12 +1,19 @@
 import { FC } from "react";
 import { useContext } from "react";
-import { SectionContainer, SectionElement } from "./TableHeader.style";
+import {
+    SectionContainer,
+    SectionElement,
+    SectionElementRight,
+    AsideTitle,
+    SectionWeek,
+} from "./TableHeader.style";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { AppContext } from "../../AppContext/AppContext";
 import { AppContextType } from "../../AppContext/AppContext";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
+// interfaceimport { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface Props {}
 
 const TableHeader: FC<Props> = () => {
@@ -17,10 +24,11 @@ const TableHeader: FC<Props> = () => {
         <SectionContainer>
             {!isMobile && (
                 <SectionElement>
+                    <AsideTitle>your 12 week progress</AsideTitle>
                     <ProgressBar />
                 </SectionElement>
             )}
-            <SectionElement>
+            <SectionWeek>
                 <button onClick={() => handlePreviousWeek()}>
                     <ArrowBackIosIcon style={{ marginLeft: 8, fontSize: 20 }} />
                 </button>
@@ -30,8 +38,17 @@ const TableHeader: FC<Props> = () => {
                 <button onClick={() => handleNextWeek()}>
                     <ArrowForwardIosIcon style={{ fontSize: 20 }} />
                 </button>
-            </SectionElement>
-            <SectionElement>x</SectionElement>
+            </SectionWeek>
+            <SectionElementRight>
+                <span>select your protein option</span>
+                <div>
+                    <img src="broccoli.png" alt="broccoli" />
+                    <img src="cheese.png" alt="" />
+                    <img src="meat.png" alt="" />
+                    <img src="clown-fish.png" alt="" />
+                    <img src="chicken-leg.png" alt="" />
+                </div>
+            </SectionElementRight>
         </SectionContainer>
     );
 };

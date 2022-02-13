@@ -5,9 +5,10 @@ export const SectionContainer = styled.div`
     width: 100%;
     height: 100px;
 `;
-export const SectionElement = styled.div`
+export const SectionWeek = styled.div`
     display: flex;
     flex-grow: 1;
+    flex-basis: 33%;
     align-items: center;
     justify-content: center;
     button {
@@ -32,4 +33,48 @@ export const SectionElement = styled.div`
         }
     }
     /* border: 1px solid black; */
+`;
+
+export const SectionElement = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 33%;
+    padding-top: 25px;
+    padding-left: 15px;
+    img {
+        filter: saturate(0%);
+        opacity: 0.7;
+        margin-left: 10px;
+    }
+`;
+
+export const SectionElementRight = styled.div`
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 33%;
+    padding-top: 25px;
+
+    img {
+        filter: saturate(0%);
+        opacity: 0.7;
+        margin-right: 15px;
+    }
+    span {
+        height: 20px;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: gray;
+        margin-right: 40px;
+    }
+`;
+
+export const AsideTitle = styled.span`
+    height: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: gray;
+    width: 100%;
 `;
