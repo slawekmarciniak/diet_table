@@ -42,11 +42,6 @@ export const SectionElement = styled.div`
     flex-basis: 33%;
     padding-top: 25px;
     padding-left: 15px;
-    img {
-        filter: saturate(0%);
-        opacity: 0.7;
-        margin-left: 10px;
-    }
 `;
 
 export const SectionElementRight = styled.div`
@@ -58,7 +53,8 @@ export const SectionElementRight = styled.div`
     padding-top: 25px;
 
     img {
-        filter: saturate(0%);
+        filter: grayscale(100%) brightness(50%) sepia(70%) hue-rotate(40deg)
+            saturate(600%) contrast(0.8);
         opacity: 0.7;
         margin-right: 15px;
     }

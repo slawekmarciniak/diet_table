@@ -21,9 +21,10 @@ const dayOfWeek = moment().day();
 
 const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     const { activeWeek } = useContext<AppContextType>(AppContext);
+    const dayWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
     const diet = carbs === "low" ? lowCarbsDiet : heightCarbsDiet;
     const dayNumber = activeWeek * 7 - 7 + day;
-    const isToday = day === dayOfWeek && activeWeek === userCurrentWeek;
+    const isToday = day === dayWeek && activeWeek === userCurrentWeek;
     const isSunday = day === 7;
 
     const renderWeekday = () => (
