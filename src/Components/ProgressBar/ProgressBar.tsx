@@ -7,20 +7,21 @@ interface ProgressBarProps {}
 const ProgressBar: FC<ProgressBarProps> = () => {
     const renderDot = (e: number, i: number) => {
         let background = "gray";
-        let border = "1px solid gray";
+        let dashBackground = "gray";
+
         if (e === userCurrentWeek) {
             background = "white";
         } else if (e < userCurrentWeek) {
             background = "green";
         }
         if (e < userCurrentWeek - 1) {
-            border = "1px solid green";
+            dashBackground = "green";
         }
         return (
             <React.Fragment key={e}>
                 <Dot key={`${e}_dot`} bcg={background} digit={e.toString()} />
                 {e < userWeeks.length && (
-                    <Dash key={`${e}_dash`} border={border} />
+                    <Dash key={`${e}_dash`} bcg={dashBackground} />
                 )}
             </React.Fragment>
         );

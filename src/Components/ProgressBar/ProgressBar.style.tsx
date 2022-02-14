@@ -5,7 +5,7 @@ interface Props {
     digit: string;
 }
 interface DashProps {
-    border: string;
+    bcg: string;
 }
 
 export const BarContainer = styled.div`
@@ -36,7 +36,7 @@ export const Dot = styled.div<Props>`
 `;
 
 export const Dash = styled.div<DashProps>`
-    border: ${(props) => props.border};
+    background-color: ${(props) => props.bcg};
     height: 2px;
     width: 8px;
 `;

@@ -26,7 +26,7 @@ export const InfoSectionContainer = styled.div`
     button {
         color: gray;
         border: 1px solid gray;
-        margin-left: 10px;
+        margin-right: 10px;
         margin-top: 10px;
         &:hover {
             border: 1px solid #333;
