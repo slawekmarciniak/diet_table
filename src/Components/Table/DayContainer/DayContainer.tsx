@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useContext } from "react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
 import PrintIcon from "@mui/icons-material/Print";
 import moment from "moment";
@@ -25,6 +26,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     const diet = carbs === "low" ? lowCarbsDiet : heightCarbsDiet;
     const dayNumber = activeWeek * 7 - 7 + day;
     const isToday = day === dayWeek && activeWeek === userCurrentWeek;
+    const isYesterday = day === dayWeek && activeWeek === userCurrentWeek;
     const isSunday = day === 7;
 
     const renderWeekday = () => (
@@ -41,6 +43,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
                     }
                     key={i}
                 >
+                    {isYesterday && <CheckCircleIcon className="check" />}
                     <p>{e}</p>
                     {e === "Bod-e Shake" && (
                         <img
@@ -61,7 +64,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
             <div className="workoutIcon">
                 <FitnessCenterIcon
                     style={{
-                        color: "gray",
+                        color: isToday ? "orange" : "gray",
                         transform: "rotate(-45deg)",
                         fontSize: 30,
                     }}
@@ -75,7 +78,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
             <div
                 className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
             >
-                <span className="sundayDay">day</span> <span>{dayNumber}</span>
+                day {dayNumber}
             </div>
             <div
                 className={

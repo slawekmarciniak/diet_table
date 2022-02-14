@@ -98,6 +98,16 @@ export const Day = styled.div<Props>`
             text-transform: uppercase;
         }
     }
+    & .check {
+        color: orange;
+        font-size: 16px;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        @media (max-width: 999px) {
+            display: none;
+        }
+    }
     & .workoutIcon {
         height: 40px;
         width: 100%;
@@ -135,5 +145,13 @@ export const Day = styled.div<Props>`
         position: absolute;
         bottom: 0;
         left: 0;
+        @media (max-width: 999px) {
+            width: 120%;
+            left: -20px;
+        }
+        @media (max-width: 600px) {
+            width: 140%;
+            left: -10px;
+        }
     }
 `;

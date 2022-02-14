@@ -16,7 +16,7 @@ const links = [
 
 const Header: FC<Props> = () => {
     const { isMobile } = useContext<AppContextType>(AppContext);
-    console.log(isMobile);
+
     return (
         <Paper elevation={1}>
             <HeaderContainer>
@@ -31,7 +31,13 @@ const Header: FC<Props> = () => {
                     <AvatarContainer>
                         <Avatar alt="Slawek Marciniak" src="/avatar.jpg" />
                         <span>slawek marciniak</span>
-                        <KeyboardArrowDownIcon style={{ fontSize: 16 }} />
+                        <KeyboardArrowDownIcon
+                            style={{
+                                fontSize: 16,
+                                marginLeft: 4,
+                                marginRight: 4,
+                            }}
+                        />
                     </AvatarContainer>
                 </Menu>
             </HeaderContainer>

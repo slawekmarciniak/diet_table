@@ -32,6 +32,9 @@ export const Dot = styled.div<Props>`
         color: gray;
         z-index: 2;
         font-size: 10px;
+        @media (max-width: 999px) {
+            display: none;
+        }
     }
 `;
 
