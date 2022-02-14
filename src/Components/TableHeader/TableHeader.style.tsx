@@ -6,6 +6,7 @@ export const SectionContainer = styled.div`
     height: 100px;
     @media (max-width: 999px) {
         width: 100vw;
+        flex-direction: column;
     }
 `;
 export const SectionWeek = styled.div`
@@ -35,7 +36,9 @@ export const SectionWeek = styled.div`
             margin: 0 0 0 8px;
         }
     }
-    /* border: 1px solid black; */
+    @media (max-width: 999px) {
+        margin-bottom: 5px;
+    }
 `;
 
 export const SectionElement = styled.div`
@@ -46,7 +49,12 @@ export const SectionElement = styled.div`
     padding-top: 25px;
     padding-left: 15px;
     @media (max-width: 999px) {
-        display: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 5%;
+        padding: 0;
+        margin-top: 15px;
     }
 `;
 
@@ -83,4 +91,7 @@ export const AsideTitle = styled.span`
     text-transform: uppercase;
     color: gray;
     width: 100%;
+    @media (max-width: 999px) {
+        display: none;
+    }
 `;

@@ -8,7 +8,8 @@ export const TableContainer = styled.div`
     overflow: hidden;
     background-color: #f5f6fa;
     @media (max-width: 999px) {
-        width: 100vw;
+        width: 98vw;
+        border-radius: 2px;
     }
 `;
 
@@ -29,15 +30,16 @@ export const DaysContainer = styled.div`
     background: #f5f6fa;
 
     .today {
+        border-right: none;
         &:after {
             content: "";
-            border: solid 3px orange;
+            border: solid 5px orange;
             position: absolute;
             bottom: -1px;
             top: -1px;
             left: -1px;
             right: -1px;
-            z-index: 2;
+            z-index: 3;
         }
     }
     @media (max-width: 999px) {
