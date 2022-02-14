@@ -5,4 +5,7 @@ export const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin: auto;
+    @media (max-width: 999px) {
+        width: 100vw;
+    }
 `;

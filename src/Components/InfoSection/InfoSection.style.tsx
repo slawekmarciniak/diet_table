@@ -33,4 +33,8 @@ export const InfoSectionContainer = styled.div`
             background-color: #d4d4d4;
         }
     }
+
+    @media (max-width: 999px) {
+        display: none;
+    }
 `;

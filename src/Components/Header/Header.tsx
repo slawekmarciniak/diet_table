@@ -1,8 +1,10 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { Paper, Avatar } from "@mui/material";
 import { HeaderContainer, Menu, Nav, AvatarContainer } from "./Header.style";
 import { NavLink } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { AppContext } from "../../AppContext/AppContext";
+import { AppContextType } from "../../AppContext/AppContext";
 
 interface Props {}
 
@@ -13,6 +15,8 @@ const links = [
 ];
 
 const Header: FC<Props> = () => {
+    const { isMobile } = useContext<AppContextType>(AppContext);
+    console.log(isMobile);
     return (
         <Paper elevation={1}>
             <HeaderContainer>

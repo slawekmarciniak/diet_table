@@ -22,12 +22,10 @@ const TableHeader: FC<Props> = () => {
 
     return (
         <SectionContainer>
-            {!isMobile && (
-                <SectionElement>
-                    <AsideTitle>your 12 week progress</AsideTitle>
-                    <ProgressBar />
-                </SectionElement>
-            )}
+            <SectionElement>
+                <AsideTitle>your 12 week progress</AsideTitle>
+                <ProgressBar />
+            </SectionElement>
             <SectionWeek>
                 <button onClick={() => handlePreviousWeek()}>
                     <ArrowBackIosIcon style={{ marginLeft: 8, fontSize: 20 }} />

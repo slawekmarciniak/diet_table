@@ -45,15 +45,13 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
                     {e === "Bod-e Shake" && (
                         <img
                             style={{
-                                opacity: 0.9,
                                 filter: isToday
                                     ? "grayscale(0%)"
                                     : "grayscale(60%)",
                             }}
                             src="bode_shake.png"
                             alt="shake"
-                            width="130"
-                        ></img>
+                        />
                     )}
                 </div>
             ))}
@@ -77,7 +75,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
             <div
                 className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
             >
-                day {dayNumber}
+                <span className="sundayDay">day</span> <span>{dayNumber}</span>
             </div>
             <div
                 className={

@@ -4,6 +4,9 @@ export const SectionContainer = styled.div`
     display: flex;
     width: 100%;
     height: 100px;
+    @media (max-width: 999px) {
+        width: 100vw;
+    }
 `;
 export const SectionWeek = styled.div`
     display: flex;
@@ -42,6 +45,9 @@ export const SectionElement = styled.div`
     flex-basis: 33%;
     padding-top: 25px;
     padding-left: 15px;
+    @media (max-width: 999px) {
+        display: none;
+    }
 `;
 
 export const SectionElementRight = styled.div`
@@ -64,6 +70,10 @@ export const SectionElementRight = styled.div`
         text-transform: uppercase;
         color: gray;
         margin-right: 40px;
+    }
+
+    @media (max-width: 999px) {
+        display: none;
     }
 `;
 

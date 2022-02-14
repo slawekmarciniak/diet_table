@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TableContainer = styled.div`
     display: flex;
     margin: auto;
-    width: 100%;
+    width: 100vw;
     border-radius: 12px;
     overflow: hidden;
     background-color: #f5f6fa;
@@ -14,10 +14,14 @@ export const IntervalsContainer = styled.div`
     flex-basis: 9%;
     flex-direction: column;
     height: 100%;
+    @media (max-width: 999px) {
+        display: none;
+    }
 `;
 
 export const DaysContainer = styled.div`
     display: flex;
+    flex-grow: 1;
     flex-basis: 91%;
     background: #f5f6fa;
 
@@ -32,5 +36,9 @@ export const DaysContainer = styled.div`
             right: -1px;
             z-index: 2;
         }
+    }
+    @media (max-width: 999px) {
+        flex-basis: 100%;
+        width: 100vw;
     }
 `;

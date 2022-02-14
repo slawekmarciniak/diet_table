@@ -7,11 +7,13 @@ interface Props {
 export const Day = styled.div<Props>`
     display: flex;
     flex-grow: 1;
+    flex-basis: 15%;
     flex-direction: column;
     border-right: ${(props) => props.borderRight};
     align-items: center;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
 
     & .dayNumber {
         display: flex;
@@ -25,6 +27,9 @@ export const Day = styled.div<Props>`
         font-weight: 500;
         text-transform: uppercase;
         border-bottom: 1px solid gray;
+        @media (max-width: 999px) {
+            font-size: 12px;
+        }
     }
     & .dayNumberActive {
         color: orange;
@@ -38,22 +43,30 @@ export const Day = styled.div<Props>`
             font-size: 14px;
             color: gray;
             margin: 5px;
+            @media (max-width: 999px) {
+                font-size: 9px;
+                margin: 3px;
+            }
         }
     }
+
     & .sunday {
-        width: 130px;
         height: 450px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
         color: #b1b1b1;
+        overflow: hidden;
         span:nth-child(1) {
             transform: rotate(-90deg) translate(40%, 0);
             font-size: 30px;
             text-transform: uppercase;
             letter-spacing: 1.3px;
             width: 300px;
+            @media (max-width: 999px) {
+                font-size: 14px;
+            }
         }
         span:nth-child(2) {
             margin-top: 60px;
@@ -101,8 +114,21 @@ export const Day = styled.div<Props>`
         text-align: center;
         background-color: #bdc3c7;
         color: gray;
+
         span {
             margin: 5px;
+            @media (max-width: 999px) {
+                display: none;
+            }
         }
+        svg {
+            @media (max-width: 999px) {
+                display: none;
+            }
+        }
+    }
+    img {
+        opacity: 0.9;
+        width: 20px;
     }
 `;
