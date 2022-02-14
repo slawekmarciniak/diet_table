@@ -3,10 +3,13 @@ import styled from "styled-components";
 export const TableContainer = styled.div`
     display: flex;
     margin: auto;
-    width: 100vw;
+    width: 1000px;
     border-radius: 12px;
     overflow: hidden;
     background-color: #f5f6fa;
+    @media (max-width: 999px) {
+        width: 100vw;
+    }
 `;
 
 export const IntervalsContainer = styled.div`

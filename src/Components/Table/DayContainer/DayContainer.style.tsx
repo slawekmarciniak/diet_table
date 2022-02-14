@@ -8,6 +8,7 @@ export const Day = styled.div<Props>`
     display: flex;
     flex-grow: 1;
     flex-basis: 15%;
+    max-width: 130px;
     flex-direction: column;
     border-right: ${(props) => props.borderRight};
     align-items: center;
@@ -39,6 +40,8 @@ export const Day = styled.div<Props>`
         width: 100%;
         height: 90px;
         overflow: hidden;
+        position: relative;
+
         p {
             font-size: 14px;
             color: gray;
@@ -49,7 +52,6 @@ export const Day = styled.div<Props>`
             }
         }
     }
-
     & .sunday {
         height: 450px;
         display: flex;
@@ -129,6 +131,9 @@ export const Day = styled.div<Props>`
     }
     img {
         opacity: 0.9;
-        width: 20px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 `;
