@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { Divider, Button } from "@mui/material";
+import { Divider } from "@mui/material";
+import MuiButton from "./Components/MuiButton";
 import { InfoSectionContainer } from "./InfoSection.style";
 
 interface Props {}
@@ -14,7 +15,7 @@ const InfoSection: FC<Props> = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci iste ipsum.
                     </p>
-                    <Button variant="outlined">Outlined</Button>
+                    <MuiButton text="Buy now" />
                 </div>
                 <Divider orientation="vertical" flexItem />
                 <div>
@@ -24,8 +25,8 @@ const InfoSection: FC<Props> = () => {
                         Adipisci iste ipsum.
                     </p>
                     <div>
-                        <Button variant="outlined">Outlined</Button>
-                        <Button variant="outlined">Outlined</Button>
+                        <MuiButton text="iOS" />
+                        <MuiButton text="Android" />
                     </div>
                 </div>
                 <Divider orientation="vertical" flexItem />
@@ -35,7 +36,7 @@ const InfoSection: FC<Props> = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci iste ipsum.
                     </p>
-                    <Button variant="outlined">Outlined</Button>
+                    <MuiButton text="Read FAQs" />
                 </div>
             </InfoSectionContainer>
         </>
