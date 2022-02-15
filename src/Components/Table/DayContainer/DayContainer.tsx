@@ -3,6 +3,7 @@ import { useContext } from "react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
+import DoneIcon from "@mui/icons-material/Done";
 import PrintIcon from "@mui/icons-material/Print";
 import moment from "moment";
 import { Day } from "./DayContainer.style";
@@ -26,7 +27,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     const diet = carbs === "low" ? lowCarbsDiet : heightCarbsDiet;
     const dayNumber = activeWeek * 7 - 7 + day;
     const isToday = day === dayWeek && activeWeek === userCurrentWeek;
-    const isYesterday = day === dayWeek && activeWeek === userCurrentWeek;
+    const isYesterday = day === dayWeek - 1 && activeWeek === userCurrentWeek;
     const isSunday = day === 7;
 
     const renderWeekday = () => (
@@ -64,11 +65,17 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
             <div className="workoutIcon">
                 <FitnessCenterIcon
                     style={{
-                        color: isToday ? "orange" : "gray",
+                        color: isToday || isYesterday ? "orange" : "gray",
                         transform: "rotate(-45deg)",
                         fontSize: 30,
                     }}
                 />
+                {(isToday || isYesterday) && (
+                    <DoneIcon
+                        className="doneIcon"
+                        style={{ fontSize: 12, color: "orange", marginLeft: 4 }}
+                    />
+                )}
             </div>
         </Day>
     );

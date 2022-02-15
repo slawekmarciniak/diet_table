@@ -43,16 +43,25 @@ const TableHeader: FC<Props> = () => {
                     <img src="broccoli.png" alt="broccoli" />
                     <img src="cheese.png" alt="" />
                     <img src="meat.png" alt="" />
-                    <img
-                        src="clown-fish.png"
-                        alt=""
-                        style={{ filter: "grayscale(100%) brightness(70%)" }}
-                    />
-                    <img
-                        src="chicken-leg.png"
-                        alt=""
-                        style={{ filter: "grayscale(100%) brightness(100%)" }}
-                    />
+                    <div className="imageContainer">
+                        <img
+                            src="clown-fish.png"
+                            alt=""
+                            style={{
+                                filter: "grayscale(100%) brightness(70%)",
+                            }}
+                        />
+                    </div>
+
+                    <div className="imageContainer">
+                        <img
+                            src="chicken-leg.png"
+                            alt=""
+                            style={{
+                                filter: "grayscale(100%) brightness(100%)",
+                            }}
+                        />
+                    </div>
                 </div>
             </SectionElementRight>
         </SectionContainer>

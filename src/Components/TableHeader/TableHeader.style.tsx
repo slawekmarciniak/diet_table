@@ -66,6 +66,20 @@ export const SectionElementRight = styled.div`
     flex-basis: 33%;
     padding-top: 25px;
 
+    & .imageContainer {
+        display: inline;
+        position: relative;
+        &:after {
+            content: "/";
+            position: absolute;
+            top: -12px;
+            left: 8px;
+            color: #cfcfcf;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    }
+
     img {
         filter: grayscale(100%) brightness(50%) sepia(70%) hue-rotate(40deg)
             saturate(600%) contrast(0.8);

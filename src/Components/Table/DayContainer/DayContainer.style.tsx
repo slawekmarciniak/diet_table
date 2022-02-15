@@ -91,11 +91,15 @@ export const Day = styled.div<Props>`
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 2px;
         p {
             font-size: 12px;
             color: gray;
             text-align: center;
             text-transform: uppercase;
+            @media (max-width: 999px) {
+                font-size: 8px;
+            }
         }
     }
     & .check {
@@ -116,6 +120,11 @@ export const Day = styled.div<Props>`
         justify-content: center;
         text-align: center;
         background-color: #bdc3c7;
+        & .doneIcon {
+            @media (max-width: 999px) {
+                display: none;
+            }
+        }
     }
     & .printIcon {
         height: 70px;
