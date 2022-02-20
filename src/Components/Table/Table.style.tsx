@@ -33,13 +33,14 @@ export const DaysContainer = styled.div`
         border-right: none;
         &:after {
             content: "";
-            border: solid 5px orange;
+            border: solid 4px ${(props) => props.theme.colors.orange};
+            border-radius: 2px;
             position: absolute;
             bottom: -1px;
             top: -1px;
-            left: -1px;
+            left: -2px;
             right: -1px;
-            z-index: 3;
+            opacity: 1;
         }
     }
     @media (max-width: 999px) {

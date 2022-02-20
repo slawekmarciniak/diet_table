@@ -44,10 +44,10 @@ export const Nav = styled.ul`
 
     .active {
         li {
-            color: orange;
+            color: ${(props) => props.theme.colors.orange};
             &:after {
                 content: "";
-                border-bottom: solid 2px orange;
+                border-bottom: solid 2px ${(props) => props.theme.colors.orange};
                 position: absolute;
                 bottom: -7px;
                 left: 37px;

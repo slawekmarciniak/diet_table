@@ -7,6 +7,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import PrintIcon from "@mui/icons-material/Print";
 import moment from "moment";
 import { Day } from "./DayContainer.style";
+import { COLORS } from "../../../GlobalStyles.style";
 import {
     lowCarbsDiet,
     heightCarbsDiet,
@@ -31,7 +32,10 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
     const isSunday = day === 7;
 
     const renderWeekday = () => (
-        <Day borderRight="1px solid gray" className={isToday ? "today" : ""}>
+        <Day
+            borderRight={`1px solid ${COLORS.gray}`}
+            className={isToday ? "today" : ""}
+        >
             <div
                 className={isToday ? "dayNumber dayNumberActive" : "dayNumber"}
             >
@@ -65,7 +69,7 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
             <div className="workoutIcon">
                 <FitnessCenterIcon
                     style={{
-                        color: isToday || isYesterday ? "orange" : "gray",
+                        color: isToday || isYesterday ? COLORS.orange : "gray",
                         transform: "rotate(-45deg)",
                         fontSize: 30,
                     }}
@@ -73,7 +77,11 @@ const DayContainer: FC<DayContainerProps> = ({ day, carbs }) => {
                 {(isToday || isYesterday) && (
                     <DoneIcon
                         className="doneIcon"
-                        style={{ fontSize: 12, color: "orange", marginLeft: 4 }}
+                        style={{
+                            fontSize: 12,
+                            color: COLORS.orange,
+                            marginLeft: 4,
+                        }}
                     />
                 )}
             </div>

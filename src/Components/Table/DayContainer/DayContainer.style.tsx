@@ -14,14 +14,14 @@ export const Day = styled.div<Props>`
     align-items: center;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     & .dayNumber {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        color: #6ab04c;
+        color: ${(props) => props.theme.colors.green};
         text-align: center;
         height: 30px;
         font-size: 18px;
@@ -33,19 +33,20 @@ export const Day = styled.div<Props>`
         }
     }
     & .dayNumberActive {
-        color: orange;
+        color: ${(props) => props.theme.colors.orange};
     }
     & .dayElement {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid ${(props) => props.theme.colors.gray};
         width: 100%;
         height: 90px;
         overflow: hidden;
         position: relative;
 
         p {
-            font-size: 14px;
-            color: gray;
+            font-size: 13px;
+            color: ${(props) => props.theme.colors.gray};
             margin: 5px;
+            margin-right: 10px;
             @media (max-width: 999px) {
                 font-size: 9px;
                 margin: 3px;
@@ -80,7 +81,7 @@ export const Day = styled.div<Props>`
     }
     & .dayElementActive {
         p {
-            color: black;
+            color: ${(props) => props.theme.colors.black};
         }
     }
     & .dayCarbs {
@@ -103,7 +104,7 @@ export const Day = styled.div<Props>`
         }
     }
     & .check {
-        color: orange;
+        color: ${(props) => props.theme.colors.orange};
         font-size: 16px;
         position: absolute;
         right: 4px;

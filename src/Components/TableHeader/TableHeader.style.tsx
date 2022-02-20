@@ -20,7 +20,7 @@ export const SectionWeek = styled.div`
         align-items: center;
         justify-content: center;
         width: 18px;
-        height: 30px;
+        height: 40px;
         color: #a0a0a0;
         border: 1px solid #afafaf;
         border-radius: 3px;
@@ -28,10 +28,10 @@ export const SectionWeek = styled.div`
         background-color: #dcdde1;
     }
     span {
-        color: orange;
-        font-size: 35px;
+        color: ${(props) => props.theme.colors.orange};
+        font-size: 34px;
         text-transform: capitalize;
-        margin: 0 8px;
+        margin: 0 20px;
         span {
             margin: 0 0 0 8px;
         }

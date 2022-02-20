@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Dot, BarContainer, Dash } from "./ProgressBar.style";
 import { userCurrentWeek, userWeeks } from "../../fakeDB/fakeDB";
+import { COLORS } from "../../GlobalStyles.style";
 
 interface ProgressBarProps {}
 
@@ -12,10 +13,10 @@ const ProgressBar: FC<ProgressBarProps> = () => {
         if (e === userCurrentWeek) {
             background = "white";
         } else if (e < userCurrentWeek) {
-            background = "green";
+            background = COLORS.green;
         }
         if (e < userCurrentWeek - 1) {
-            dashBackground = "green";
+            dashBackground = COLORS.green;
         }
         return (
             <React.Fragment key={e}>
