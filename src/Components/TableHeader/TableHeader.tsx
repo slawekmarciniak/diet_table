@@ -1,24 +1,46 @@
-import { FC } from "react";
-import { useContext } from "react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { FC, useContext } from "react";
+import { AppContext, AppContextType } from "../../AppContext/AppContext";
+import { userWeeks } from "../../fakeDB/fakeDB";
+import ProgressBar from "../ProgressBar/ProgressBar";
 import {
+    AsideTitle,
     SectionContainer,
     SectionElement,
     SectionElementRight,
-    AsideTitle,
     SectionWeek,
 } from "./TableHeader.style";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { AppContext } from "../../AppContext/AppContext";
-import { AppContextType } from "../../AppContext/AppContext";
-import ProgressBar from "../ProgressBar/ProgressBar";
 
-// interfaceimport { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface Props {}
 
 const TableHeader: FC<Props> = () => {
-    const { activeWeek, handleNextWeek, handlePreviousWeek, isMobile } =
-        useContext<AppContextType>(AppContext);
+    const {
+        activeWeek,
+        handleNextWeek,
+        handlePreviousWeek,
+        setIsSliderRight,
+        setIsSliderLeft,
+    } = useContext<AppContextType>(AppContext);
+
+    const handleRightButton = () => {
+        handleNextWeek();
+        if (activeWeek < userWeeks.length) {
+            setIsSliderRight(true);
+            setTimeout(() => {
+                setIsSliderRight(false);
+            }, 400);
+        }
+    };
+    const handleLeftButton = () => {
+        handlePreviousWeek();
+        if (activeWeek > 1) {
+            setIsSliderLeft(true);
+            setTimeout(() => {
+                setIsSliderLeft(false);
+            }, 400);
+        }
+    };
 
     return (
         <SectionContainer>
@@ -27,13 +49,13 @@ const TableHeader: FC<Props> = () => {
                 <ProgressBar />
             </SectionElement>
             <SectionWeek>
-                <button onClick={() => handlePreviousWeek()}>
+                <button onClick={handleLeftButton}>
                     <ArrowBackIosIcon style={{ marginLeft: 8, fontSize: 20 }} />
                 </button>
                 <span>
                     week<span>{activeWeek}</span>
                 </span>
-                <button onClick={() => handleNextWeek()}>
+                <button onClick={handleRightButton}>
                     <ArrowForwardIosIcon style={{ fontSize: 20 }} />
                 </button>
             </SectionWeek>

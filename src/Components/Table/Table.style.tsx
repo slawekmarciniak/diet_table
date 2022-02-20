@@ -6,7 +6,6 @@ export const TableContainer = styled.div`
     width: 1000px;
     border-radius: 12px;
     overflow: hidden;
-    background-color: #f5f6fa;
     @media (max-width: 999px) {
         width: 98vw;
         border-radius: 2px;

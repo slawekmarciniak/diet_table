@@ -6,6 +6,10 @@ export type AppContextType = {
     handleNextWeek: () => void;
     handlePreviousWeek: () => void;
     isMobile: boolean;
+    isSliderRight: boolean;
+    setIsSliderRight: (e: boolean) => void;
+    isSliderLeft: boolean;
+    setIsSliderLeft: (e: boolean) => void;
 };
 
 export const AppContext = createContext<AppContextType | any>(null);
@@ -17,6 +21,8 @@ type Props = {
 const AppProvider = ({ children }: Props) => {
     const [activeWeek, setActiveWeek] = useState(userCurrentWeek);
     const [isMobile, setIsMobile] = useState(false);
+    const [isSliderRight, setIsSliderRight] = useState(false);
+    const [isSliderLeft, setIsSliderLeft] = useState(false);
 
     const handleResize = () => {
         if (window.innerWidth < 1000) {
@@ -45,6 +51,10 @@ const AppProvider = ({ children }: Props) => {
                 handleNextWeek,
                 handlePreviousWeek,
                 isMobile,
+                isSliderRight,
+                setIsSliderRight,
+                isSliderLeft,
+                setIsSliderLeft,
             }}
         >
             {children}
