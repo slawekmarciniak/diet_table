@@ -7,6 +7,10 @@ export const COLORS = {
     green: "#6ab04c",
 };
 
+export const device = {
+    mobile: `(max-width: 999px)`,
+};
+
 export const GlobalStyles = createGlobalStyle`
     body {
         background-color: #dcdde1;

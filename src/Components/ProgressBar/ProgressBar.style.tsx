@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../GlobalStyles.style";
 
 interface Props {
     bcg: string;
@@ -32,7 +33,7 @@ export const Dot = styled.div<Props>`
         color: gray;
         z-index: 2;
         font-size: 10px;
-        @media (max-width: 999px) {
+        @media ${device.mobile} {
             display: none;
         }
     }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../GlobalStyles.style";
 
 interface Props {
     borderRight: string;
@@ -28,7 +29,7 @@ export const Day = styled.div<Props>`
         font-weight: 500;
         text-transform: uppercase;
         border-bottom: 1px solid gray;
-        @media (max-width: 999px) {
+        @media ${device.mobile} {
             font-size: 12px;
         }
     }
@@ -47,7 +48,7 @@ export const Day = styled.div<Props>`
             color: ${(props) => props.theme.colors.gray};
             margin: 5px;
             margin-right: 10px;
-            @media (max-width: 999px) {
+            @media ${device.mobile} {
                 font-size: 9px;
                 margin: 3px;
             }
@@ -67,7 +68,7 @@ export const Day = styled.div<Props>`
             text-transform: uppercase;
             letter-spacing: 1.3px;
             width: 300px;
-            @media (max-width: 999px) {
+            @media ${device.mobile} {
                 font-size: 14px;
             }
         }
@@ -98,7 +99,7 @@ export const Day = styled.div<Props>`
             color: gray;
             text-align: center;
             text-transform: uppercase;
-            @media (max-width: 999px) {
+            @media ${device.mobile} {
                 font-size: 8px;
             }
         }
@@ -109,7 +110,7 @@ export const Day = styled.div<Props>`
         position: absolute;
         right: 4px;
         top: 4px;
-        @media (max-width: 999px) {
+        @media ${device.mobile} {
             display: none;
         }
     }
@@ -122,7 +123,7 @@ export const Day = styled.div<Props>`
         text-align: center;
         background-color: #bdc3c7;
         & .doneIcon {
-            @media (max-width: 999px) {
+            @media ${device.mobile} {
                 display: none;
             }
         }
@@ -139,12 +140,12 @@ export const Day = styled.div<Props>`
 
         span {
             margin: 5px;
-            @media (max-width: 999px) {
+            @media ${device.mobile} {
                 display: none;
             }
         }
         svg {
-            @media (max-width: 999px) {
+            @media ${device.mobile} {
                 display: none;
             }
         }
@@ -155,7 +156,7 @@ export const Day = styled.div<Props>`
         position: absolute;
         bottom: 0;
         left: 0;
-        @media (max-width: 999px) {
+        @media ${device.mobile} {
             width: 120%;
             left: -20px;
         }

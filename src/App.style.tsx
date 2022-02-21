@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./GlobalStyles.style";
 
 export const PageContainer = styled.div`
     width: 1000px;
@@ -6,7 +7,7 @@ export const PageContainer = styled.div`
     flex-direction: column;
     margin: auto;
     overflow: hidden;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         width: 100vw;
     }
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../GlobalStyles.style";
 
 export const InfoSectionContainer = styled.div`
     width: 100%;
@@ -34,7 +35,7 @@ export const InfoSectionContainer = styled.div`
         }
     }
 
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         display: none;
     }
 `;

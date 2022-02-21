@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../GlobalStyles.style";
 
 export const TableContainer = styled.div`
     display: flex;
@@ -6,7 +7,7 @@ export const TableContainer = styled.div`
     width: 1000px;
     border-radius: 12px;
     overflow: hidden;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         width: 98vw;
         border-radius: 2px;
     }
@@ -17,7 +18,7 @@ export const IntervalsContainer = styled.div`
     flex-basis: 9%;
     flex-direction: column;
     height: 100%;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         display: none;
     }
 `;
@@ -42,7 +43,7 @@ export const DaysContainer = styled.div`
             opacity: 1;
         }
     }
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         flex-basis: 100%;
         width: 100vw;
     }

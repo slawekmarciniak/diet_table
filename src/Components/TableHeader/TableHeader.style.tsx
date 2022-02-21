@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { device } from "../../GlobalStyles.style";
 
 export const SectionContainer = styled.div`
     display: flex;
     width: 100%;
     height: 100px;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         width: 100vw;
         flex-direction: column;
     }
@@ -48,7 +49,7 @@ export const SectionElement = styled.div`
     flex-basis: 33%;
     padding-top: 25px;
     padding-left: 15px;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         width: 100%;
         align-items: center;
         justify-content: center;
@@ -94,7 +95,7 @@ export const SectionElementRight = styled.div`
         margin-right: 40px;
     }
 
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         display: none;
     }
 `;
@@ -105,7 +106,7 @@ export const AsideTitle = styled.span`
     text-transform: uppercase;
     color: gray;
     width: 100%;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         display: none;
     }
 `;

@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { device } from "../../GlobalStyles.style";
 
 export const HeaderContainer = styled.div`
     width: 100vw;
     background-color: #f5f6fa;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         width: 100vw;
     }
 `;
@@ -14,7 +15,7 @@ export const Menu = styled.div`
     width: 1000px;
     height: 60px;
     background-color: #f5f6fa;
-    @media (max-width: 999px) {
+    @media ${device.mobile} {
         width: 100vw;
     }
 `;
@@ -52,7 +53,7 @@ export const Nav = styled.ul`
                 bottom: -7px;
                 left: 37px;
                 right: 37px;
-                @media (max-width: 999px) {
+                @media ${device.mobile} {
                     left: 25px;
                     right: 25px;
                 }
