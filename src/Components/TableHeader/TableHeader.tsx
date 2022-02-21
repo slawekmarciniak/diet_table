@@ -1,6 +1,6 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { FC, useContext } from "react";
+import { FC, useContext, useState } from "react";
 import { AppContext, AppContextType } from "../../AppContext/AppContext";
 import { userWeeks } from "../../fakeDB/fakeDB";
 import ProgressBar from "../ProgressBar/ProgressBar";
@@ -23,6 +23,14 @@ const TableHeader: FC<Props> = () => {
         setIsSliderLeft,
     } = useContext<AppContextType>(AppContext);
 
+    const [isIconActive, setIsIconActive]: any = useState({
+        broccoli: true,
+        cheese: true,
+        meat: false,
+        fish: false,
+        chicken: true,
+    });
+
     const handleRightButton = () => {
         handleNextWeek();
         if (activeWeek < userWeeks.length) {
@@ -40,6 +48,12 @@ const TableHeader: FC<Props> = () => {
                 setIsSliderLeft(false);
             }, 400);
         }
+    };
+    const handleIcon = (iconName: string) => {
+        setIsIconActive({
+            ...isIconActive,
+            [iconName]: !isIconActive[iconName],
+        });
     };
 
     return (
@@ -62,26 +76,76 @@ const TableHeader: FC<Props> = () => {
             <SectionElementRight>
                 <span>select your protein option</span>
                 <div>
-                    <img src="broccoli.png" alt="broccoli" />
-                    <img src="cheese.png" alt="" />
-                    <img src="meat.png" alt="" />
-                    <div className="imageContainer">
+                    <div
+                        className={
+                            isIconActive.broccoli
+                                ? "imgContainer"
+                                : "imgContainer imgContainerDisabled"
+                        }
+                        onClick={() => handleIcon("broccoli")}
+                    >
                         <img
-                            src="clown-fish.png"
-                            alt=""
-                            style={{
-                                filter: "grayscale(100%) brightness(70%)",
-                            }}
+                            className={
+                                isIconActive.broccoli ? "" : "imgDisable"
+                            }
+                            src="broccoli.png"
+                            alt="broccoli"
                         />
                     </div>
-
-                    <div className="imageContainer">
+                    <div
+                        className={
+                            isIconActive.cheese
+                                ? "imgContainer"
+                                : "imgContainer imgContainerDisabled"
+                        }
+                        onClick={() => handleIcon("cheese")}
+                    >
                         <img
+                            className={isIconActive.cheese ? "" : "imgDisable"}
+                            src="cheese.png"
+                            alt="cheese"
+                        />
+                    </div>
+                    <div
+                        className={
+                            isIconActive.meat
+                                ? "imgContainer"
+                                : "imgContainer imgContainerDisabled"
+                        }
+                        onClick={() => handleIcon("meat")}
+                    >
+                        <img
+                            className={isIconActive.meat ? "" : "imgDisable"}
+                            src="meat.png"
+                            alt="meat"
+                        />
+                    </div>
+                    <div
+                        className={
+                            isIconActive.fish
+                                ? "imgContainer"
+                                : "imgContainer imgContainerDisabled"
+                        }
+                        onClick={() => handleIcon("fish")}
+                    >
+                        <img
+                            src="clown-fish.png"
+                            alt="fish"
+                            className={isIconActive.fish ? "" : "imgDisable"}
+                        />
+                    </div>
+                    <div
+                        className={
+                            isIconActive.chicken
+                                ? "imgContainer"
+                                : "imgContainer imgContainerDisabled"
+                        }
+                        onClick={() => handleIcon("chicken")}
+                    >
+                        <img
+                            className={isIconActive.chicken ? "" : "imgDisable"}
                             src="chicken-leg.png"
-                            alt=""
-                            style={{
-                                filter: "grayscale(100%) brightness(100%)",
-                            }}
+                            alt="chicken"
                         />
                     </div>
                 </div>

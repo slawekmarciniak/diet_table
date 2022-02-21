@@ -67,9 +67,13 @@ export const SectionElementRight = styled.div`
     flex-basis: 33%;
     padding-top: 25px;
 
-    & .imageContainer {
+    .imgContainer {
         display: inline;
         position: relative;
+        cursor: pointer;
+    }
+
+    .imgContainerDisabled {
         &:after {
             content: "/";
             position: absolute;
@@ -87,6 +91,10 @@ export const SectionElementRight = styled.div`
         opacity: 0.7;
         margin-right: 15px;
     }
+    .imgDisable {
+        filter: grayscale(100%) brightness(70%);
+    }
+
     span {
         height: 20px;
         font-size: 11px;
