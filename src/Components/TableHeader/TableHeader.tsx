@@ -13,6 +13,13 @@ import {
 } from "./TableHeader.style";
 
 interface Props {}
+interface Icons {
+    broccoli: boolean;
+    cheese: boolean;
+    meat: boolean;
+    fish: boolean;
+    chicken: boolean;
+}
 
 const TableHeader: FC<Props> = () => {
     const {
@@ -23,7 +30,7 @@ const TableHeader: FC<Props> = () => {
         setIsSliderLeft,
     } = useContext<AppContextType>(AppContext);
 
-    const [isIconActive, setIsIconActive]: any = useState({
+    const [isIconActive, setIsIconActive] = useState<Icons | any>({
         broccoli: true,
         cheese: true,
         meat: false,
